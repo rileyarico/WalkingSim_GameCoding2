@@ -46,7 +46,10 @@ public class CCPlayer : MonoBehaviour
 
     void Update()
     {
-
+        HandleLook();
+        HandleMovement();
+        CheckInteract();
+        HandleInteract();
     }
     void Start()
     {
