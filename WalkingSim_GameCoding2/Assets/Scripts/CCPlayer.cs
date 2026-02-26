@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,6 +28,7 @@ public class CCPlayer : MonoBehaviour
     private GameObject currentTarget;
     public Image reticleImage;
     private bool interactPressed;
+    public static event Action<NPCData> OnDialogueRequested;
 
     private bool isSprinting;
     private bool isJumping;
@@ -188,10 +190,17 @@ public class CCPlayer : MonoBehaviour
         if (context.performed) interactPressed = true;
     }
 
+    public void RequestDialogue(NPCData npcData)
+    {
+        OnDialogueRequested?.Invoke(npcData);
+    }
+
     //example
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         //Debug.Log("CC collided with: " + hit.gameObject.name);
     }
     
+
+
 }
