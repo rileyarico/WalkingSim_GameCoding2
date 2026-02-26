@@ -76,7 +76,7 @@ public class CCPlayer : MonoBehaviour
     {
         //updating our bool to be true or false if the player is grounded
         bool grounded = cc.isGrounded;
-        Debug.Log("is grounded: " + grounded);
+        //Debug.Log("is grounded: " + grounded);
 
         //this keeps the character controller snapped to the ground
         if(grounded && verticalVelocity <= 0)
@@ -121,7 +121,7 @@ public class CCPlayer : MonoBehaviour
     void CheckInteract()
     {
         //reset reticle image to normal color first
-        if (reticleImage != null) reticleImage.color = new Color(0, 0, 0, .7f);
+        if (reticleImage != null) reticleImage.color = new Color(100, 100, 100, .5f);
         //make a ray that goes straight out of the camera(center of screen)
         //players eyesight
         Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
@@ -184,13 +184,14 @@ public class CCPlayer : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
+        Debug.Log("Interacted with Object");
         if (context.performed) interactPressed = true;
     }
 
     //example
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("CC collided with: " + hit.gameObject.name);
+        //Debug.Log("CC collided with: " + hit.gameObject.name);
     }
     
 }
