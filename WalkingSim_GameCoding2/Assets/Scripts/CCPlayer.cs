@@ -27,7 +27,7 @@ public class CCPlayer : MonoBehaviour
     //interaction variables
     private GameObject currentTarget;
     public Image reticleImage;
-    private bool interactPressed;
+    public bool interactPressed;
     public static event Action<NPCData> OnDialogueRequested;
     private Interactable currentInteractable;
 
