@@ -6,15 +6,11 @@ using UnityEngine.EventSystems;
 
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Item item;
-
-
-
     //drag & drop
     [Header("UI")]
     public Image image;
 
-
+    [HideInInspector] public Item item;
     [HideInInspector] public Transform parentAfterDrag;
 
     private void Start()
@@ -23,12 +19,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void InitializeItem(Item newItem)
     {
+        item = newItem;
         image.sprite = newItem.image;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root); //Remove item from this ItemSlot Parent
@@ -39,7 +35,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
         image.raycastTarget = false;
         transform.SetParent(parentAfterDrag); //Change parent to the new InventorySlot
     }
