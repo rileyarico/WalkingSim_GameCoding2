@@ -49,14 +49,22 @@ public class CCPlayer : MonoBehaviour
 
     void Update()
     {
-        HandleLook();
+        if (Cursor.lockState == CursorLockMode.Locked)
+        { HandleLook(); }
         HandleMovement();
         CheckInteract();
         HandleInteract();
+
     }
     void Start()
     {
 
+    }
+
+
+    private bool GetKeyDown(KeyCode escape)
+    {
+        throw new NotImplementedException();
     }
 
     private void HandleLook()
@@ -192,8 +200,27 @@ public class CCPlayer : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        Debug.Log("Interacted with Object");
+        Debug.Log("OnInteract fired. performed= " + context.performed);
         if (context.performed) interactPressed = true;
+    }
+
+    public void CursorLock(InputAction.CallbackContext context)
+    {
+        //if cursor IS locked, unlock it
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            //unlock it
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            return; //Return bc otherwise it would lock it again on next line
+        }
+        //if cursor IS NOT locked, lock it
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            return;
+        }
     }
 
     public void RequestDialogue(NPCData npcData)
