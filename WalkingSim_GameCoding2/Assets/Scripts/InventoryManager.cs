@@ -18,6 +18,7 @@ public class InventoryManager : MonoBehaviour
             {
                 //spawn item in this slot
                 SpawnNewItem(item, slot);
+                Debug.Log("Spawned " + item + " at " + slot);
                 return;
             }
         }

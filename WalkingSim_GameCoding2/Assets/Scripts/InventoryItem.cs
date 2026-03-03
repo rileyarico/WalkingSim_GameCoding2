@@ -25,6 +25,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log("Tried to pick up " + item);
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root); //Remove item from this ItemSlot Parent
@@ -37,5 +38,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         image.raycastTarget = false;
         transform.SetParent(parentAfterDrag); //Change parent to the new InventorySlot
+        Debug.Log("Moved " + item + " to " + parentAfterDrag);
     }
 }
