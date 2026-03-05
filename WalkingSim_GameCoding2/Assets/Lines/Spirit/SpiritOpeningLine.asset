@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
+  m_Name: SpiritOpeningLine
+  m_EditorClassIdentifier: Assembly-CSharp::NPCData
+  displayName: Spirit
+  lines:
+  - Hellurrrrrr.
+  - My name is Spirit. I'm really craving an apple right now.
+  - Do you have any?
+  dialogueChoices:
+  - choiceText: Yes (Give Apple)
+    nextNode: {fileID: 11400000, guid: 596a2efef40696f4288cc2ff25c25fb5, type: 2}
+  - choiceText: No...
+    nextNode: {fileID: 11400000, guid: 5739610d7f10548468b2d7cbe490c2f0, type: 2}
+  nextNode: {fileID: 0}

@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: OpeningLine
+  m_Name: Node 3
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Trent
-  placeHolderOpeningLine: Hello I'm Trent
+  displayName: Spirit
+  lines:
+  - Bro.... why are u here even.
+  dialogueChoices: []
+  nextNode: {fileID: 0}
