@@ -21,6 +21,9 @@ public class RequestManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (panel.transform.childCount > 1)
+        {
+            Debug.Log("Found item in request slot");
+        }
     }
 }

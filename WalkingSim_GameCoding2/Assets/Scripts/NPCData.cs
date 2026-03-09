@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Dialogue/NPC Data")]
@@ -17,9 +18,32 @@ public class NPCData : ScriptableObject
     [Header("If no choices, auto continue to this next node")]
     public NPCData nextNode;
 
-    [Header("If pl")]
+    [Header("If requesting an item call this function and ask for this item.")]
+    public GameObject requestM;
+    public InventoryItem requestingItem;
 
+    public GameObject test;
 
+    private RequestManager req;
+
+    private void Start()
+    {
+        Debug.Log("Checking for request");
+        if (requestM != null)
+        {
+            req = requestM.GetComponent<RequestManager>();
+        }
+        if(requestingItem != null && req == null)
+        {
+            Debug.Log("Req manager not linked on " + this);
+        }
+        if (requestM != null && requestingItem != null)
+        {
+            Debug.Log("Both RequestManager & Requesting item found");
+            req.MakeActive();
+            Debug.Log("Called MakeActive() in RequestSlot");
+        }
+    }
 }
 
 [System.Serializable]

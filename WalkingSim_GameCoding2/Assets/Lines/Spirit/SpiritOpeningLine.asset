@@ -23,3 +23,4 @@ MonoBehaviour:
   - choiceText: No...
     nextNode: {fileID: 11400000, guid: 5739610d7f10548468b2d7cbe490c2f0, type: 2}
   nextNode: {fileID: 0}
+  requestingItem: {fileID: 0}

@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: Node 2
+  m_Name: New NPC Data
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Spirit
-  lines:
-  - Brooo hand it over!!
+  displayName: 
+  lines: []
   dialogueChoices: []
   nextNode: {fileID: 0}
-  requestingItem: {fileID: 8886804746230402695, guid: 5a0c9676273c7c9428d739a7bc0e3cee, type: 3}
