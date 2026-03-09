@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     private NPCData currentNode; //current node we are reading from the scriptable object (SO)
     private int lineIndex; //which line index we are currently on, keeping track of the dialogue
     private bool isActive; //are we currently in dialogue?
+    private InventoryItem request;
 
     //lock the player movement & camera
     private CCPlayer player;
@@ -37,14 +38,19 @@ public class DialogueManager : MonoBehaviour
         //find our player
         player = FindFirstObjectByType<CCPlayer>();
 
-        if(currentNode.requestingItem != null)
+        if(currentNode.requestingItem != null )
+        {
+            Debug.Log("Current node has an item request. Assigning it.");
+            request = currentNode.requestingItem;
+        }
+        /*if(currentNode.requestingItem != null)
         {
             //find request slot
             InventorySlot reqSlot = requestPanel.GetComponentInChildren<InventorySlot>();
             //grab the requestSlot script
             RequestSlot yes = reqSlot.GetComponent<RequestSlot>();
-            yes.GiveRequest(currentNode.requestingItem);
-        }
+            yes.SetRequest(currentNode.requestingItem);
+        } */
     }
 
     private void OnEnable()
@@ -70,6 +76,10 @@ public class DialogueManager : MonoBehaviour
             {
                 return;
             }
+            if(true) //if we are supposed to give NPC an object, can't advance.
+            {
+
+            }
             Advance();
         }
 
@@ -86,22 +96,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if(currentNode.requestingItem != null)
-        {
-            Debug.Log("This node has a requesting item.");
-            //find request slot
-            InventorySlot reqSlot = requestPanel.GetComponentInChildren<InventorySlot>();
-            //grab the requestSlot script
-            RequestSlot yes = reqSlot.GetComponent<RequestSlot>();
-
-            if(yes.CheckItem(currentNode.requestingItem))
-            {
-                Debug.Log("Correct item given! Continuing to next node");
-                Advance();
-            }
-
-
-        }
+       
         //keyboard.current.qKey
     }
 
@@ -125,6 +120,24 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(true);
         }
         ShowLine();
+
+
+        if (currentNode.requestingItem != null)
+        {
+            Debug.Log("This node has a requesting item.");
+            //find request slot
+            //InventorySlot reqSlot = requestPanel.GetComponentInChildren<InventorySlot>();
+            //grab the requestSlot script
+           // RequestSlot yes = reqSlot.GetComponent<RequestSlot>();
+
+            /*if (yes.CheckItem(currentNode.requestingItem))
+            {
+                Debug.Log("Correct item given! Continuing to next node");
+                Advance();
+            }
+            */
+
+        }
     }
 
     bool HasChoices(NPCData node) //check the data

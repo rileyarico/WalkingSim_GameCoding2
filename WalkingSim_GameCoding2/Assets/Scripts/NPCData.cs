@@ -19,30 +19,17 @@ public class NPCData : ScriptableObject
     public NPCData nextNode;
 
     [Header("If requesting an item call this function and ask for this item.")]
-    private RequestManager requestM;
     public InventoryItem requestingItem;
-
-    private RequestManager req;
 
     private void Awake()
     {
-        Debug.Log("Running Start from NPCData");
-        requestM = FindFirstObjectByType<RequestManager>();
-        Debug.Log("Checking for request");
-        if (requestM != null)
-        {
-            req = requestM.GetComponent<RequestManager>();
-        }
-        if(requestingItem != null && req == null)
-        {
-            Debug.Log("Req manager not linked on " + this);
-        }
-        if (requestM != null && requestingItem != null)
-        {
-            Debug.Log("Both RequestManager & Requesting item found");
-            req.MakeActive();
-            Debug.Log("Called MakeActive() in RequestSlot");
-        }
+        
+    }
+    
+    public InventoryItem GetRequestingItem()
+    {
+        Debug.Log("Requesting item is null for this node");
+        return requestingItem;
     }
 }
 

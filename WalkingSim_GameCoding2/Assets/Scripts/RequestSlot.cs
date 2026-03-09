@@ -18,12 +18,16 @@ public class RequestSlot : MonoBehaviour, IDropHandler
 
     private void Update()
     {
-        Debug.Log("Child of Request slot is " +  heldObject);
+        //Debug.Log("Child of Request slot is " +  heldObject);
         heldObject = this.GetComponentInChildren<InventoryItem>();
 
-        if (heldObject == requestedItem)
+        if (heldObject != null && requestedItem !=null)
         {
-            DestroyChild();
+            if (heldObject == requestedItem)
+            {
+                Debug.Log("given item matches request!"); //i know this works because it would run when both were null
+                //DestroyChild();
+            }
         }
     }
 
@@ -41,7 +45,7 @@ public class RequestSlot : MonoBehaviour, IDropHandler
         return false;
     }
 
-    public void GiveRequest(InventoryItem item)
+    public void SetRequest(InventoryItem item)
     {
         Debug.Log("Took request");
         requestedItem = item;
@@ -49,7 +53,7 @@ public class RequestSlot : MonoBehaviour, IDropHandler
 
     public void DestroyChild()
     {
-        Destroy(heldObject.gameObject);
+        //Destroy(heldObject.gameObject);
         heldObject = null;
     }
 }
