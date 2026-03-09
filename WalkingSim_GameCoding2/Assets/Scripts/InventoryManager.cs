@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
+    }
+
+    public void CheckPointer(PointerEventData eventData)
+    {
+        Debug.Log("Mouse attempted");
     }
 
     void SpawnNewItem(Item item, InventorySlot slot)

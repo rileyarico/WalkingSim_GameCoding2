@@ -22,10 +22,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         item = newItem;
         image.sprite = newItem.image;
     }
-
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Tried to pick up " + item);
+        Debug.Log("Tried to pick up " + item);  //This won't run after we have moved this item to another slot already. Meaning something wrong with PointerEventData?
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root); //Remove item from this ItemSlot Parent
@@ -36,8 +35,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        image.raycastTarget = false;
+        image.raycastTarget = true;
         transform.SetParent(parentAfterDrag); //Change parent to the new InventorySlot
-        Debug.Log("Moved " + item + " to " + parentAfterDrag);
+        Debug.Log("Moved " + item + " to " + parentAfterDrag);  //Same problem as other Debug.Log
     }
 }
