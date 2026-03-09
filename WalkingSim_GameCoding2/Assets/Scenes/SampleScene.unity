@@ -3351,12 +3351,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130596982}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38911a0590b9e2c4793fb77b0903d59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RequestSlot
-  nameOfRequestedObject: 
+  requestedItem: {fileID: 0}
   heldObject: {fileID: 0}
 --- !u!1 &1150548823
 GameObject:

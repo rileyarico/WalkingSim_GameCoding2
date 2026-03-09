@@ -37,6 +37,14 @@ public class DialogueManager : MonoBehaviour
         //find our player
         player = FindFirstObjectByType<CCPlayer>();
 
+        if(currentNode.requestingItem != null)
+        {
+            //find request slot
+            InventorySlot reqSlot = requestPanel.GetComponentInChildren<InventorySlot>();
+            //grab the requestSlot script
+            RequestSlot yes = reqSlot.GetComponent<RequestSlot>();
+            yes.GiveRequest(currentNode.requestingItem);
+        }
     }
 
     private void OnEnable()
@@ -76,6 +84,23 @@ public class DialogueManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             return;
+        }
+
+        if(currentNode.requestingItem != null)
+        {
+            Debug.Log("This node has a requesting item.");
+            //find request slot
+            InventorySlot reqSlot = requestPanel.GetComponentInChildren<InventorySlot>();
+            //grab the requestSlot script
+            RequestSlot yes = reqSlot.GetComponent<RequestSlot>();
+
+            if(yes.CheckItem(currentNode.requestingItem))
+            {
+                Debug.Log("Correct item given! Continuing to next node");
+                Advance();
+            }
+
+
         }
         //keyboard.current.qKey
     }
