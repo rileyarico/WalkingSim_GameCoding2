@@ -15,6 +15,10 @@ public class DialogueManager : MonoBehaviour
     public Transform choicesContainer; //parent object where choice buttons will spawn
     public Button choiceButtonPrefab; //prefab for a single choice button
 
+    [Header("Request")]
+    public GameObject requestPanel; //RequestSlot is a child of this.
+    public TextMeshProUGUI requestText;
+
     private NPCData currentNode; //current node we are reading from the scriptable object (SO)
     private int lineIndex; //which line index we are currently on, keeping track of the dialogue
     private bool isActive; //are we currently in dialogue?
@@ -167,6 +171,16 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    void ShowRequest(InventoryItem requestingItem)
+    {
+        Debug.Log("attempting to make RequestPanel visible");
+        //we need to make request panel active
+        requestPanel.SetActive(true);
+        Debug.Log("Made Request panel active");
+        requestText.text = "Drag item to give.";
+        Debug.Log("Made request text active");
+    }
+
     void FinishNode()
     {
         //1. if choice exists, show choices
@@ -180,9 +194,17 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        //if NPC is requesting an item, show the request slot
+        if (currentNode.requestingItem != null)
+        {
+            Debug.Log("calling ShowRequest()");
+            ShowRequest(currentNode.requestingItem);
+            return;
+        }
+
         //auto continue our text
 
-        if(currentNode.nextNode != null)
+        if (currentNode.nextNode != null)
         {
             currentNode = currentNode.nextNode;
             lineIndex = 0;
@@ -286,6 +308,10 @@ public class DialogueManager : MonoBehaviour
         {
             dialoguePanel.SetActive(false);
         }
+
+        //turn of request panel
+        //requestPanel.SetActive(false);
+        //requestText.text = "";
     }
 
 }

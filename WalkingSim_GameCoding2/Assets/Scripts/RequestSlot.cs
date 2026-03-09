@@ -9,13 +9,28 @@ public class RequestSlot : MonoBehaviour, IDropHandler
     {
         if (transform.gameObject.name == nameOfRequestedObject)
         {
+            Debug.Log("Trying to assign InventoryItem as a parent of Request Slot");
             InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             inventoryItem.parentAfterDrag = transform;
             heldObject = inventoryItem;
         }
     }
 
-    public void ChangeRequest(string newRequest)
+    private void Update()
+    {
+        heldObject = this.GetComponentInChildren<InventoryItem>();
+    }
+
+    public bool CheckItem(InventoryItem item)
+    {
+        if(heldObject == item)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void GiveRequest(string newRequest)
     {
         nameOfRequestedObject = newRequest;
     }

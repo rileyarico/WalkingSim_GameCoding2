@@ -19,15 +19,15 @@ public class NPCData : ScriptableObject
     public NPCData nextNode;
 
     [Header("If requesting an item call this function and ask for this item.")]
-    public GameObject requestM;
+    private RequestManager requestM;
     public InventoryItem requestingItem;
-
-    public GameObject test;
 
     private RequestManager req;
 
-    private void Start()
+    private void Awake()
     {
+        Debug.Log("Running Start from NPCData");
+        requestM = FindFirstObjectByType<RequestManager>();
         Debug.Log("Checking for request");
         if (requestM != null)
         {

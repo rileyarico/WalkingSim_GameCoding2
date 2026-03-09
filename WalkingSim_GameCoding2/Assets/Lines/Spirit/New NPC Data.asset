@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: New NPC Data
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   displayName: 
-  lines: []
+  lines:
+  - Can I have it?
   dialogueChoices: []
   nextNode: {fileID: 0}
+  requestingItem: {fileID: 0}

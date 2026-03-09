@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   displayName: Spirit
   lines:
-  - Brooo hand it over!!
+  - You are a life saver!
   dialogueChoices: []
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 120d3492e6598c2429947079667a8c6c, type: 2}
   requestingItem: {fileID: 8886804746230402695, guid: 5a0c9676273c7c9428d739a7bc0e3cee, type: 3}
