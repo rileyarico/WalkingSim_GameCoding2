@@ -17,6 +17,7 @@ public class NPCData : ScriptableObject
     [Header("If no choices, auto continue to this next node")]
     public NPCData nextNode;
 
+    [Header("If pl")]
 
 
 }

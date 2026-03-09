@@ -1,10 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class InventoryManager : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
-    public GameObject inventoryItemPrefab;
+    public GameObject[] inventoryItemPrefab;
+    public Item[] itemList;
+
+    private GameObject objectToSpawn;
     public void AddItem(Item item)
     {
         //for every inventory slot,
@@ -26,14 +30,15 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public void CheckPointer(PointerEventData eventData)
+    private void Start()
     {
-        Debug.Log("Mouse attempted");
+        objectToSpawn = inventoryItemPrefab[0]; //CHANGE OBJECT YOU WANT TO SPAWN!! This code sucks
+        AddItem(itemList[0]); 
+        AddItem(itemList[0]);
     }
-
     void SpawnNewItem(Item item, InventorySlot slot)
     {
-        GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
+        GameObject newItemGo = Instantiate(objectToSpawn, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitializeItem(item);
     }
