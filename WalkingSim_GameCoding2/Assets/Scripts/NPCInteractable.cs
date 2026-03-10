@@ -22,4 +22,7 @@ public class NPCInteractable : Interactable
         Debug.Log("Requesting item is null for this node");
         //return requestingItem;
     }
+
+    
+
 }
