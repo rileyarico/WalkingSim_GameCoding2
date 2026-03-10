@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonEvent : MonoBehaviour
 {
@@ -26,7 +27,10 @@ public class ButtonEvent : MonoBehaviour
 
     }
 
-
+    public void NextScene(String sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 
     // E X A M P L E ! ! ! 
 
