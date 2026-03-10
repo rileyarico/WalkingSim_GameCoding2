@@ -26,11 +26,7 @@ public class NPCData : ScriptableObject
         
     }
     
-    public InventoryItem GetRequestingItem()
-    {
-        Debug.Log("Requesting item is null for this node");
-        return requestingItem;
-    }
+    
 }
 
 [System.Serializable]

@@ -38,11 +38,8 @@ public class DialogueManager : MonoBehaviour
         //find our player
         player = FindFirstObjectByType<CCPlayer>();
 
-        if(currentNode.requestingItem != null )
-        {
-            Debug.Log("Current node has an item request. Assigning it.");
-            request = currentNode.requestingItem;
-        }
+        CheckRequest();
+       
         /*if(currentNode.requestingItem != null)
         {
             //find request slot
@@ -51,6 +48,25 @@ public class DialogueManager : MonoBehaviour
             RequestSlot yes = reqSlot.GetComponent<RequestSlot>();
             yes.SetRequest(currentNode.requestingItem);
         } */
+    }
+
+    public void CheckRequest()
+    {
+        //currentNode = 
+        /*if (currentNode.requestingItem == null)
+         {
+            currentNode = FindAnyObjectByType<NPCData>();
+             Debug.Log("Exiting the function, no requested item");
+             return;
+         }*/
+
+        /*if (currentNode.requestingItem != null)
+        {
+         
+            Debug.Log("Current node has an item request. Assigning it.");
+            request = currentNode.requestingItem;
+        }*/
+        
     }
 
     private void OnEnable()
@@ -121,23 +137,19 @@ public class DialogueManager : MonoBehaviour
         }
         ShowLine();
 
-
-        if (currentNode.requestingItem != null)
+        //yasmine
+       /*NPCInteractable interact = npcData.GetComponent<NPCInteractable>();
+       InventoryItem item = npcData.requestingItem; 
+        if(item == null)
         {
-            Debug.Log("This node has a requesting item.");
-            //find request slot
-            //InventorySlot reqSlot = requestPanel.GetComponentInChildren<InventorySlot>();
-            //grab the requestSlot script
-           // RequestSlot yes = reqSlot.GetComponent<RequestSlot>();
-
-            /*if (yes.CheckItem(currentNode.requestingItem))
-            {
-                Debug.Log("Correct item given! Continuing to next node");
-                Advance();
-            }
-            */
-
+            Debug.Log("no item");
         }
+        if (item != null)
+        {
+            Debug.Log("has item");
+        }
+        interact.GetRequestingItem(item);
+        Debug.Log("calling get requesting item");*/
     }
 
     bool HasChoices(NPCData node) //check the data
