@@ -203,6 +203,12 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Made request text active");
     }
 
+    public void HideRequest()
+    {
+        requestPanel.SetActive(false);
+        requestText.text = "";
+    }
+
     void FinishNode()
     {
         //1. if choice exists, show choices
@@ -316,7 +322,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         //lock player camera
         isActive = false; //no longer in dialogue
@@ -347,6 +353,18 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Correct item given!");
             // advance dialogue, remove from inventory, etc.
+            //moving to next node if exists
+            NPCData next = currentNode.nextNode;
+            Choose(next);
+
+            //destroy item
+            Debug.Log("Destroying dropped item");
+            InventoryItem getRequestSlotHeld = FindAnyObjectByType<RequestSlot>().GetComponentInChildren<InventoryItem>();
+            Destroy(getRequestSlotHeld.gameObject);
+
+            //set panel innactive
+            HideRequest();
+
         }
         else
         {

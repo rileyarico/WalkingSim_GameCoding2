@@ -32,6 +32,17 @@ public class ButtonEvent : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void CancelGiveItem()
+    {
+        DialogueManager diaM = FindAnyObjectByType<DialogueManager>();
+        diaM.EndDialogue();
+        diaM.HideRequest();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        //wish i could send object back to inventory,
+        //would probably look like instantiating new item in inventory and then destroying the one in RequestSlot
+    }
+
     // E X A M P L E ! ! ! 
 
     //this is not SCALEABLE if we want 10 things to react when we press the button,
