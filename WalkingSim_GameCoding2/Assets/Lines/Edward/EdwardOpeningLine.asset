@@ -20,8 +20,10 @@ MonoBehaviour:
   - I'm looking for a new book to read. If you could find me one that would be great.
   dialogueChoices:
   - choiceText: I have one.
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: 2ef1f07680b280f47acc2ddee670e7e1, type: 2}
   - choiceText: I'll look
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: 709ffef5aec791a4c8369f04636c2f81, type: 2}
   nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
+  requestCompleted: 0
+  requestComplete: {fileID: 0}

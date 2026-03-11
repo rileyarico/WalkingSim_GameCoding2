@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
   m_Name: GaveItem
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: 
+  displayName: Spirit
   lines:
   - Thank you so much!
   dialogueChoices: []
   nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
+  requestCompleted: 1
+  requestComplete: {fileID: 0}

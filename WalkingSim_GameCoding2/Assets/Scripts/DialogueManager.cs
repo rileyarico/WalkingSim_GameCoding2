@@ -121,6 +121,12 @@ public class DialogueManager : MonoBehaviour
         {
             dialoguePanel.SetActive(true);
         }
+
+        if(currentNode.requestCompleted)
+        {
+            currentNode = currentNode.requestComplete;
+        }
+
         ShowLine();
     }
 
@@ -255,6 +261,11 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        /*if(currentNode.requestCompleted)
+        {
+            Choose(currentNode.requestComplete);
+        }*/
+
         //update the speaker name
         if(displayName != null)
         {
@@ -362,6 +373,11 @@ public class DialogueManager : MonoBehaviour
             InventoryItem getRequestSlotHeld = FindAnyObjectByType<RequestSlot>().GetComponentInChildren<InventoryItem>();
             Destroy(getRequestSlotHeld.gameObject);
 
+            //Set request complete BUT WE NEED TO FIND ORIGINAL NODE, NOT THIS ONE BC THIS IS SETTING TRUE TO THE NODE ASKING FOR ITEM
+            //NPCData originalLine =
+
+            //currentNode.requestCompleted = true;
+            //Debug.Log("requestCompleted = " currentNode.requestComplete.ToString());
             //set panel innactive
             HideRequest();
 

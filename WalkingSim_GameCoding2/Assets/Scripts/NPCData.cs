@@ -20,6 +20,10 @@ public class NPCData : ScriptableObject
 
     [Header("If requesting an item call this function and ask for this item.")]
     public InventoryItem requestingItem;
+    public bool requestCompleted = false;
+
+    [Header("If request complete, run this node from now on")]
+    public NPCData requestComplete;
 
     private void Awake()
     {

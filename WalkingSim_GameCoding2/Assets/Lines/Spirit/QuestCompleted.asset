@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: Node1
+  m_Name: QuestCompleted
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Edward
+  displayName: Spirit
   lines:
-  - You do? Can you give it to me?
+  - Thank you so much for that apple!
   dialogueChoices: []
-  nextNode: {fileID: 11400000, guid: 2d4519690a471b243ad7bc71c87f8fb3, type: 2}
-  requestingItem: {fileID: 480122604751939000, guid: add93165f2a46f44b8da9f8be70b9af4, type: 3}
+  nextNode: {fileID: 0}
+  requestingItem: {fileID: 0}
   requestCompleted: 0
   requestComplete: {fileID: 0}
