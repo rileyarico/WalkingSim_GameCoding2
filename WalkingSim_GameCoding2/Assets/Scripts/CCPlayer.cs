@@ -29,6 +29,7 @@ public class CCPlayer : MonoBehaviour
     public Image reticleImage;
     public bool interactPressed;
     public static event Action<NPCData> OnDialogueRequested;
+    public static event Action<Item> OnCheckItem;
     private Interactable currentInteractable;
 
     private bool isSprinting;
@@ -232,6 +233,11 @@ public class CCPlayer : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         //Debug.Log("CC collided with: " + hit.gameObject.name);
+    }
+
+    public void CheckRequest(Item item)
+    {
+        OnCheckItem?.Invoke(item);
     }
     
 

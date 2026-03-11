@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     private NPCData currentNode; //current node we are reading from the scriptable object (SO)
     private int lineIndex; //which line index we are currently on, keeping track of the dialogue
     private bool isActive; //are we currently in dialogue?
-    private InventoryItem request;
+    
 
     //lock the player movement & camera
     private CCPlayer player;
@@ -38,7 +38,7 @@ public class DialogueManager : MonoBehaviour
         //find our player
         player = FindFirstObjectByType<CCPlayer>();
 
-        CheckRequest();
+        
        
         /*if(currentNode.requestingItem != null)
         {
@@ -49,34 +49,20 @@ public class DialogueManager : MonoBehaviour
             yes.SetRequest(currentNode.requestingItem);
         } */
     }
-
-    public void CheckRequest()
-    {
-        //currentNode = 
-        /*if (currentNode.requestingItem == null)
-         {
-            currentNode = FindAnyObjectByType<NPCData>();
-             Debug.Log("Exiting the function, no requested item");
-             return;
-         }*/
-
-        /*if (currentNode.requestingItem != null)
-        {
-         
-            Debug.Log("Current node has an item request. Assigning it.");
-            request = currentNode.requestingItem;
-        }*/
-        
-    }
-
+    
+    
     private void OnEnable()
     {
         CCPlayer.OnDialogueRequested += StartDialogue;
+        CCPlayer.OnCheckItem += CheckRequest;
+
     }
 
     private void OnDisable()
     {
         CCPlayer.OnDialogueRequested -= StartDialogue;
+        CCPlayer.OnCheckItem -= CheckRequest;
+        
     }
 
     private void Update()
@@ -136,20 +122,6 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(true);
         }
         ShowLine();
-
-        //yasmine
-       /*NPCInteractable interact = npcData.GetComponent<NPCInteractable>();
-       InventoryItem item = npcData.requestingItem; 
-        if(item == null)
-        {
-            Debug.Log("no item");
-        }
-        if (item != null)
-        {
-            Debug.Log("has item");
-        }
-        interact.GetRequestingItem(item);
-        Debug.Log("calling get requesting item");*/
     }
 
     bool HasChoices(NPCData node) //check the data
@@ -247,7 +219,7 @@ public class DialogueManager : MonoBehaviour
         //if NPC is requesting an item, show the request slot
         if (currentNode.requestingItem != null)
         {
-            Debug.Log("calling ShowRequest()");
+            //Debug.Log("calling ShowRequest()");
             ShowRequest(currentNode.requestingItem);
             return;
         }
@@ -362,6 +334,25 @@ public class DialogueManager : MonoBehaviour
         //turn of request panel
         //requestPanel.SetActive(false);
         //requestText.text = "";
+    }
+
+    void CheckRequest(Item droppedItem)
+    {
+        if (currentNode == null) return;
+        if (currentNode.requestingItem == null) return; // NPC wants nothing
+    
+        Debug.Log("requesting item name: " + currentNode.requestingItem.name);
+        Debug.Log("dropped item name: " + droppedItem.name);
+        if (droppedItem.name == currentNode.requestingItem.name)
+        {
+            Debug.Log("Correct item given!");
+            // advance dialogue, remove from inventory, etc.
+        }
+        else
+        {
+            Debug.Log("Wrong item.");
+        }
+        
     }
 
 }
