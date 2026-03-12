@@ -19,4 +19,4 @@ MonoBehaviour:
   nextNode: {fileID: 11400000, guid: 819e1437120bdaf4dbb45d79de5c2678, type: 2}
   requestingItem: {fileID: 6155026740613876637, guid: 3832505280b56104fb4dbe9dcede19b7, type: 3}
   requestCompleted: 0
-  requestComplete: {fileID: 0}
+  requestComplete: {fileID: 11400000, guid: 250b7106b25ed9b49bc0b8da1bd36718, type: 2}

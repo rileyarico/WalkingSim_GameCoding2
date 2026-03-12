@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
   m_Name: GiveItem
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Demon
+  displayName: Edward
   lines:
-  - Really??
+  - You do? Can you give it to me?
   dialogueChoices: []
-  nextNode: {fileID: 11400000, guid: 26ee4e4b4240c914d93c3486a89b8cf6, type: 2}
-  requestingItem: {fileID: 7348860911515884825, guid: 53d07f44d8337da43a00070ff83defa9, type: 3}
+  nextNode: {fileID: 11400000, guid: 2d4519690a471b243ad7bc71c87f8fb3, type: 2}
+  requestingItem: {fileID: 480122604751939000, guid: add93165f2a46f44b8da9f8be70b9af4, type: 3}
   requestCompleted: 0
-  requestComplete: {fileID: 11400000, guid: 874178a1186d8b645821d0ebbd80e3d0, type: 2}
+  requestComplete: {fileID: 11400000, guid: 75583814760bcfc43be9cbf553830fd7, type: 2}

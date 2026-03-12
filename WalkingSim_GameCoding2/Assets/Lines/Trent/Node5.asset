@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
   m_Name: Node5
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: 
+  displayName: Trent
   lines:
   - If you could get me one that would be awesome!
   dialogueChoices: []

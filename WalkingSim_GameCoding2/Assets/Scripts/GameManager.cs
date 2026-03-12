@@ -57,10 +57,14 @@ public class GameManager : MonoBehaviour
 
         if (requestTotal == diaM.requestsDone)
         {
-            timer = 5f;
-            if (Time.deltaTime <= 0)
-            { 
-                SceneManager.LoadScene(nextScene);
+            Debug.Log("Total requests = requests done");
+            //waiting for dialogue to be innactive
+            if (diaM.isActive == false)
+            {
+                Debug.Log("Dialogue finished. Attempting to load next scene");
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene(nextScene);
             }
         }
     }

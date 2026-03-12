@@ -18,3 +18,5 @@ MonoBehaviour:
   dialogueChoices: []
   nextNode: {fileID: 11400000, guid: b95fb2daba9746843ac96d4bcbc3ee25, type: 2}
   requestingItem: {fileID: 8886804746230402695, guid: 5a0c9676273c7c9428d739a7bc0e3cee, type: 3}
+  requestCompleted: 0
+  requestComplete: {fileID: 11400000, guid: 0b2ccf4c93bcec44097a219bad4fc21a, type: 2}
