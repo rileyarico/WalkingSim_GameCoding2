@@ -16,7 +16,7 @@ MonoBehaviour:
   lines:
   - So awesome bro! I'm glad you're doing good!
   dialogueChoices: []
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: ed855424d4723924aa4a13ddf6d1b931, type: 2}
   requestingItem: {fileID: 0}
   requestCompleted: 0
   requestComplete: {fileID: 0}

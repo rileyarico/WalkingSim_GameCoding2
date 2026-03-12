@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: Node3
+  m_Name: DemonOpeningLine
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Trent
+  displayName: Demon
   lines:
-  - Man, that's unfortunate.
-  dialogueChoices: []
-  nextNode: {fileID: 11400000, guid: ed855424d4723924aa4a13ddf6d1b931, type: 2}
+  - Hey man.
+  dialogueChoices:
+  - choiceText: Is your name Demon?
+    nextNode: {fileID: 11400000, guid: c8425bcf65d5b844e9c526ac4fc70193, type: 2}
+  - choiceText: Hi
+    nextNode: {fileID: 11400000, guid: 2e1fed7bd3099994580998e3362a566b, type: 2}
+  nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
   requestCompleted: 0
   requestComplete: {fileID: 0}

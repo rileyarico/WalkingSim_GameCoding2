@@ -10,12 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: Node5
+  m_Name: Node2
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: 
+  displayName: Demon
   lines:
-  - If you could get me one that would be awesome!
-  dialogueChoices: []
+  - Someone stole my skull from my grave again.
+  - People think its funny to steal my head like "Omg the devil's head" right? Real
+    funny...
+  - If you could find it for me that would be great. Hopefully it's still around
+    here.
+  dialogueChoices:
+  - choiceText: I have it
+    nextNode: {fileID: 11400000, guid: a292a18a27249d34a90c35fe93d0c9f2, type: 2}
+  - choiceText: I'll look
+    nextNode: {fileID: 11400000, guid: 8043a810aa912134097294ead5d63d1d, type: 2}
   nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
   requestCompleted: 0

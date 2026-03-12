@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
   m_Name: Node3
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Trent
+  displayName: Demon
   lines:
-  - Man, that's unfortunate.
+  - Thanks for keeping an eye out! If you don't find it you'll be cursed by "The
+    Demon" haha.
+  - Why did I say that?
   dialogueChoices: []
-  nextNode: {fileID: 11400000, guid: ed855424d4723924aa4a13ddf6d1b931, type: 2}
+  nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
   requestCompleted: 0
   requestComplete: {fileID: 0}

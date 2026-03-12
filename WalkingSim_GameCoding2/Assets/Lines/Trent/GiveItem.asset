@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   displayName: 
   lines:
-  - Thank you so much!
+  - You do??
   dialogueChoices: []
-  nextNode: {fileID: 0}
-  requestingItem: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: f19e96c519491a7488637e90fe926859, type: 2}
+  requestingItem: {fileID: 9068545487072504913, guid: 4ede2d3df0fbac84ead77fe38c1b9d5c, type: 3}
   requestCompleted: 0
   requestComplete: {fileID: 0}

@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: Node3
+  m_Name: Node1
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Trent
+  displayName: Ralph
   lines:
-  - Man, that's unfortunate.
-  dialogueChoices: []
-  nextNode: {fileID: 11400000, guid: ed855424d4723924aa4a13ddf6d1b931, type: 2}
+  - Oh... Don't worry about it. I lost it a long time ago.
+  - Anyways, have you happened to see one? Or could you look for it?
+  dialogueChoices:
+  - choiceText: I found it.
+    nextNode: {fileID: 11400000, guid: 20208ae8b42f5ee4cb0db3b5d92cd6b2, type: 2}
+  - choiceText: I'll look around.
+    nextNode: {fileID: 11400000, guid: 965cf06c65bf17e4fbe55118ce675ace, type: 2}
+  nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
   requestCompleted: 0
   requestComplete: {fileID: 0}

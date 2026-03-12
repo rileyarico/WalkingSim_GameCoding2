@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: Node3
+  m_Name: GiveItem
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Trent
+  displayName: Demon
   lines:
-  - Man, that's unfortunate.
+  - Really??
   dialogueChoices: []
-  nextNode: {fileID: 11400000, guid: ed855424d4723924aa4a13ddf6d1b931, type: 2}
-  requestingItem: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 26ee4e4b4240c914d93c3486a89b8cf6, type: 2}
+  requestingItem: {fileID: 7348860911515884825, guid: 53d07f44d8337da43a00070ff83defa9, type: 3}
   requestCompleted: 0
   requestComplete: {fileID: 0}
