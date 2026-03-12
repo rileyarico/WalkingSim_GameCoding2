@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI requestsLeftText;
 
     [HideInInspector] public int requestTotal;
-    
+    public string nextScene;
+    private DialogueManager diaM;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void aAwake()
     {
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("NPC");
         requestTotal = objectsWithTag.Length;
         Debug.Log("Objects with NPC tag: " + requestTotal);
+        diaM = FindAnyObjectByType<DialogueManager>();
     }
 
     // Update is called once per frame
@@ -39,7 +42,6 @@ public class GameManager : MonoBehaviour
     {
         if (requestTotal > 0)
         {
-            DialogueManager diaM = FindAnyObjectByType<DialogueManager>();
             requestsLeftText.text = "Requests left: " + (requestTotal - diaM.requestsDone);
         }
         else
@@ -47,7 +49,10 @@ public class GameManager : MonoBehaviour
             requestsLeftText.text = "";
         }
 
-
+        if (requestTotal == diaM.requestsDone)
+        {
+            SceneManager.LoadScene(nextScene);
+        }
     }
     public void OnReload(InputAction.CallbackContext context)
     {
