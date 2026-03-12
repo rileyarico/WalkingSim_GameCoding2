@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int requestTotal;
     public string nextScene;
     private DialogueManager diaM;
+    [HideInInspector] public bool showRequestsLeft;
+    private float timer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void aAwake()
@@ -40,7 +42,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (requestTotal > 0)
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        if (requestTotal > 0 && showRequestsLeft)
         {
             requestsLeftText.text = "Requests left: " + (requestTotal - diaM.requestsDone);
         }
@@ -51,7 +57,11 @@ public class GameManager : MonoBehaviour
 
         if (requestTotal == diaM.requestsDone)
         {
-            SceneManager.LoadScene(nextScene);
+            timer = 5f;
+            if (Time.deltaTime <= 0)
+            { 
+                SceneManager.LoadScene(nextScene);
+            }
         }
     }
     public void OnReload(InputAction.CallbackContext context)

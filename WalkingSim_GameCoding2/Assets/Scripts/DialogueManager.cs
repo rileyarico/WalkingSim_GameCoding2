@@ -370,6 +370,19 @@ public class DialogueManager : MonoBehaviour
         if (droppedItem.name == currentNode.requestingItem.name)
         {
             Debug.Log("Correct item given!");
+            //we need to change the NPC's starting node
+            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("NPC");
+            for(int i = 0;  i < objectsWithTag.Length; i++)
+            {
+                //for every NPC in the scene, look through, and
+                //if the name matches the NPC Speaker Name, grab it, and change it's startingNode (NPCData)
+                if (objectsWithTag[i].name == currentNode.displayName)
+                {
+                    NPCInteractable npcInteract = objectsWithTag[i].GetComponent<NPCInteractable>();
+                    npcInteract.npcData = currentNode.requestComplete;
+                }
+            }
+
             // advance dialogue, remove from inventory, etc.
             //moving to next node if exists
             NPCData next = currentNode.nextNode;

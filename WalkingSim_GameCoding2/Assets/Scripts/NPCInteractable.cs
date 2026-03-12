@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class NPCInteractable : Interactable
 {
+    public bool requestDone = false;
     public NPCData npcData;
 
     public override void Interact(CCPlayer ccplayer)

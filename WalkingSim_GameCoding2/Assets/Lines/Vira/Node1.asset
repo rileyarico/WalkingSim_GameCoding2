@@ -19,8 +19,8 @@ MonoBehaviour:
   dialogueChoices:
   - choiceText: I have one
     nextNode: {fileID: 11400000, guid: fe016f0835c601448972c17b6f6856d1, type: 2}
-  - choiceText: I have one
-    nextNode: {fileID: 0}
+  - choiceText: I'll look for one
+    nextNode: {fileID: 11400000, guid: b24467c6756c6a94db0aecce078185a6, type: 2}
   nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
   requestCompleted: 0
