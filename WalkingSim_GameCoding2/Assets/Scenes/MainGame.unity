@@ -2088,6 +2088,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3682219729714042998, guid: 9a8c31fa3b10d544d8d12cc0ed3971fb, type: 3}
+      propertyPath: npcData
+      value: 
+      objectReference: {fileID: 11400000, guid: 38e61f7cbede239499db57a982b49d6f, type: 2}
     - target: {fileID: 4098126773763106154, guid: 9a8c31fa3b10d544d8d12cc0ed3971fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.97
@@ -2398,6 +2402,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3682219729714042998, guid: 9a8c31fa3b10d544d8d12cc0ed3971fb, type: 3}
+      propertyPath: npcData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ccc277f5ac790246bb7c0f3ad6163d9, type: 2}
     - target: {fileID: 4098126773763106154, guid: 9a8c31fa3b10d544d8d12cc0ed3971fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.658276
@@ -7604,6 +7612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   requestsLeftText: {fileID: 952051303}
   requestTotal: 0
+  nextScene: GameOver
 --- !u!4 &901289927
 Transform:
   m_ObjectHideFlags: 0
@@ -8536,7 +8545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FirstGhost
   startingDialogue: {fileID: 11400000, guid: ca730d66ef4d919439c6cab742939760, type: 2}
   firstGhost: {fileID: 1311392904}
-  requestsLeftText: {fileID: 0}
+  requestsLeftText: {fileID: 952051303}
 --- !u!65 &968546539
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -36,6 +36,7 @@ public class FirstGhost : MonoBehaviour
             {
                 objectsWithTag[i].SetActive(true);
             }
+            //we need to turn request visibility off before dialogue with firstghost
             gameManager.requestTotal = objectsWithTag.Length;
             //& destroy this.
             Destroy(firstGhost.gameObject);
