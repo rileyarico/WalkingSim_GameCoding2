@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3682219729714042998}
   m_Layer: 0
   m_Name: NPC Prefab
-  m_TagString: Interactable
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

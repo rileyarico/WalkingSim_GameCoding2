@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     //static means a variable that belongs t the class itself rather than the specific instance of that class
     public static GameManager instance;
+    public TextMeshProUGUI requestsLeftText;
+
+    private int requestTotal;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void aAwake()
@@ -20,12 +24,23 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+    }
+
+    private void Start()
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("NPC");
+        requestTotal = objectsWithTag.Length;
+        Debug.Log("Objects with NPC tag: " + requestTotal);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        DialogueManager diaM = FindAnyObjectByType<DialogueManager>();
+        requestsLeftText.text = "Requests left: " + (requestTotal - diaM.requestsDone);
+
+
     }
     public void OnReload(InputAction.CallbackContext context)
     {

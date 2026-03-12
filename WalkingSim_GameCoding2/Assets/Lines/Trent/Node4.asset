@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: TrentOpeningLine
+  m_Name: Node4
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   displayName: Trent
   lines:
-  - Hello, my name is Trent.
-  - How are you?
+  - 'Do you know what would be so awesome?
+
+    If you could get me a lovely boquet. '
   dialogueChoices:
-  - choiceText: I'm good!
-    nextNode: {fileID: 11400000, guid: 214016a0a99b90e45aa9462d5af68699, type: 2}
-  - choiceText: I'm okay!
-    nextNode: {fileID: 11400000, guid: d6695dc547cb45a4abe00323e3b6f723, type: 2}
+  - choiceText: I have one.
+    nextNode: {fileID: 11400000, guid: a80c963bcd33fa24e95b7f212dae5351, type: 2}
+  - choiceText: I'll find one.
+    nextNode: {fileID: 11400000, guid: 35dee19909ec96d4783db42659041b28, type: 2}
   nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
   requestCompleted: 0

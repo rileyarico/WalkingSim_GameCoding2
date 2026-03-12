@@ -10,17 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c871f8520f3fc4ba9465f53662a56f, type: 3}
-  m_Name: TrentOpeningLine
+  m_Name: Node5
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Trent
-  lines:
-  - Hello, my name is Trent.
-  - How are you?
-  dialogueChoices:
-  - choiceText: I'm good!
-    nextNode: {fileID: 11400000, guid: 214016a0a99b90e45aa9462d5af68699, type: 2}
-  - choiceText: I'm okay!
-    nextNode: {fileID: 11400000, guid: d6695dc547cb45a4abe00323e3b6f723, type: 2}
+  displayName: 
+  lines: []
+  dialogueChoices: []
   nextNode: {fileID: 0}
   requestingItem: {fileID: 0}
   requestCompleted: 0

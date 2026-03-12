@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   displayName: Trent
   lines:
-  - So awesome bro!
+  - So awesome bro! I'm glad you're doing good!
   dialogueChoices: []
   nextNode: {fileID: 0}
+  requestingItem: {fileID: 0}
+  requestCompleted: 0
+  requestComplete: {fileID: 0}

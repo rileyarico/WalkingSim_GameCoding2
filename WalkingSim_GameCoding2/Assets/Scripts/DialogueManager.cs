@@ -22,7 +22,9 @@ public class DialogueManager : MonoBehaviour
     private NPCData currentNode; //current node we are reading from the scriptable object (SO)
     private int lineIndex; //which line index we are currently on, keeping track of the dialogue
     private bool isActive; //are we currently in dialogue?
-    
+
+    //to manage how many requests done
+    [HideInInspector] public int requestsDone;
 
     //lock the player movement & camera
     private CCPlayer player;
@@ -373,6 +375,7 @@ public class DialogueManager : MonoBehaviour
             InventoryItem getRequestSlotHeld = FindAnyObjectByType<RequestSlot>().GetComponentInChildren<InventoryItem>();
             Destroy(getRequestSlotHeld.gameObject);
 
+            requestsDone++;
             //Set request complete BUT WE NEED TO FIND ORIGINAL NODE, NOT THIS ONE BC THIS IS SETTING TRUE TO THE NODE ASKING FOR ITEM
             //NPCData originalLine =
 
