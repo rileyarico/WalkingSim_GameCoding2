@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public TextMeshProUGUI requestsLeftText;
 
-    private int requestTotal;
+    [HideInInspector] public int requestTotal;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void aAwake()
@@ -37,8 +37,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DialogueManager diaM = FindAnyObjectByType<DialogueManager>();
-        requestsLeftText.text = "Requests left: " + (requestTotal - diaM.requestsDone);
+        if (requestTotal > 0)
+        {
+            DialogueManager diaM = FindAnyObjectByType<DialogueManager>();
+            requestsLeftText.text = "Requests left: " + (requestTotal - diaM.requestsDone);
+        }
+        else
+        {
+            requestsLeftText.text = "";
+        }
 
 
     }

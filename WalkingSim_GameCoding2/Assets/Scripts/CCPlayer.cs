@@ -52,7 +52,11 @@ public class CCPlayer : MonoBehaviour
     {
         if (Cursor.lockState == CursorLockMode.Locked)
         { HandleLook(); }
-        HandleMovement();
+        DialogueManager diaM = FindAnyObjectByType<DialogueManager>();
+        if (!diaM.isActive)
+        {
+            HandleMovement();
+        }
         CheckInteract();
         HandleInteract();
 

@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     private NPCData currentNode; //current node we are reading from the scriptable object (SO)
     private int lineIndex; //which line index we are currently on, keeping track of the dialogue
-    private bool isActive; //are we currently in dialogue?
+    [HideInInspector] public bool isActive; //are we currently in dialogue?
 
     //to manage how many requests done
     [HideInInspector] public int requestsDone;
@@ -74,7 +74,7 @@ public class DialogueManager : MonoBehaviour
             return; //if no dialogue is active, ignore
         }
                         //uses Z key
-        if(Keyboard.current != null && Keyboard.current.zKey.wasPressedThisFrame) //doesn't give an error despite us using player input in this project!
+        if(Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame) //doesn't give an error despite us using player input in this project!
         {
             if (ChoicesAreShowing()) //blocks only when button exists
             {
@@ -91,12 +91,16 @@ public class DialogueManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            //Rigidbody rb = player.GetComponent<Rigidbody>();
+            //rb.constraints = RigidbodyConstraints.None;
             return;
         }
         if(isActive)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            //Rigidbody rb = player.GetComponent<Rigidbody>();
+            //rb.constraints = RigidbodyConstraints.FreezeAll;
             return;
         }
 
@@ -111,8 +115,9 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("NPC Data is NULL");
             return;
         }
-        
+
         //this is where  we would lock player camera & movement
+            //Actually set this up in update, checks isActive.
 
         //set state
         currentNode = (NPCData)npcData;
