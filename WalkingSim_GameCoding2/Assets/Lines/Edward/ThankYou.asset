@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   displayName: Edward
   lines:
-  - Thank you! I can't wait to read this. Wait I can't read this.
+  - 'Thank you! I can''t wait to read this. '
+  - Wait I can't read this.
   dialogueChoices: []
   nextNode: {fileID: 0}
   requestingItem: {fileID: 0}

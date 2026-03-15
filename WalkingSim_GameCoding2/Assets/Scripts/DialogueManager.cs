@@ -380,6 +380,15 @@ public class DialogueManager : MonoBehaviour
                 {
                     NPCInteractable npcInteract = objectsWithTag[i].GetComponent<NPCInteractable>();
                     npcInteract.npcData = currentNode.requestComplete;
+
+                    foreach (Transform child in npcInteract.transform)
+                    {
+                        //destroy the quest marker
+                        Destroy(child.gameObject);
+                    }
+                    /*GameObject questMarter = npcInteract.GetComponentInChildren<GameObject>();
+                    questMarter.SetActive(false);
+                    npcInteract.*/
                 }
             }
 
@@ -393,13 +402,8 @@ public class DialogueManager : MonoBehaviour
             InventoryItem getRequestSlotHeld = FindAnyObjectByType<RequestSlot>().GetComponentInChildren<InventoryItem>();
             Destroy(getRequestSlotHeld.gameObject);
 
-            requestsDone++;
-            //Set request complete BUT WE NEED TO FIND ORIGINAL NODE, NOT THIS ONE BC THIS IS SETTING TRUE TO THE NODE ASKING FOR ITEM
-            //NPCData originalLine =
 
-            //currentNode.requestCompleted = true;
-            //Debug.Log("requestCompleted = " currentNode.requestComplete.ToString());
-            //set panel innactive
+            requestsDone++;
             HideRequest();
 
         }

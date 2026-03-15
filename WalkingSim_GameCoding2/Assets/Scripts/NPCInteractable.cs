@@ -17,12 +17,6 @@ public class NPCInteractable : Interactable
         ccplayer.RequestDialogue(npcData);
     }
 
-    public void GetRequestingItem(InventoryItem item)
-    {
-        npcData.requestingItem = item;
-        Debug.Log("Requesting item is null for this node");
-        //return requestingItem;
-    }
 
     
 
