@@ -1,4 +1,3 @@
-using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class NPCInteractable : Interactable
@@ -16,7 +15,6 @@ public class NPCInteractable : Interactable
         //if we are interacting with the NPC and it has data, then request dialogue
         ccplayer.RequestDialogue(npcData);
     }
-
 
     
 
